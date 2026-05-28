@@ -311,9 +311,6 @@ void CMFCServerDlg::WriteToFile(const CString& strMessage)
 	// File name format yyyymmdd_hh00.log
 	strFileName.Format(_T("%04d%02d%02d_%02d00.log"), lt.wYear ,lt.wMonth, lt.wDay , lt.wHour);
 
-	// Add Time stamp to log message
-	//strWrite.Format(_T("%02d:%02d:%02d %s"), lt.wHour, lt.wMinute, lt.wSecond, (LPCTSTR)strMessage);
-
 	if (file.Open(strFileName, CFile::modeCreate | CFile::modeWrite | CFile::modeNoTruncate))
 	{
 		file.SeekToEnd();
