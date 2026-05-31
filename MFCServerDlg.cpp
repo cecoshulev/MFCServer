@@ -169,17 +169,6 @@ BOOL CMFCServerDlg::OnInitDialog()
 	m_ListClients.InsertColumn(2, _T("Connected at"), LVCFMT_LEFT, 100);
 	m_ListClients.InsertColumn(3, _T("Time"), LVCFMT_LEFT, 100); // time since last activity
 
-/*
-	int index = m_ListClients.InsertItem(0, _T("Client 1"));
-	m_ListClients.SetItemText(index, 1, _T("local host"));
-	m_ListClients.SetItemText(index, 2, _T("Y"));
-	m_ListClients.SetItemText(index, 3, _T("0"));
-
-	index = m_ListClients.InsertItem(1, _T("Client 2"));
-	m_ListClients.SetItemText(index, 1, _T("local host"));
-	m_ListClients.SetItemText(index, 2, _T("Y"));
-	m_ListClients.SetItemText(index, 3, _T("0"));
-*/	
 	UpdateData(false);
 
 	SetTimer(ID_TIMER_CLIENTS, 1000, NULL);
