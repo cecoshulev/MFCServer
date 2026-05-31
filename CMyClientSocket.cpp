@@ -33,6 +33,8 @@ void CMyClientSocket::OnReceive(int nErrorCode)
         szBuffer[nBytesReceived] = _T('\0');
         CString strReceived = szBuffer;
 
+        GetLocalTime(&m_stLastActiveTime);
+
         // If receive USERNAME:
         if ((strReceived.Find(_T("USERNAME:"), 0) == 0) &&
             (m_strUsername.IsEmpty()))   // If once user name is set it can not be changed

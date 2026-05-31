@@ -26,7 +26,7 @@ public:
     CString m_strUsername = _T("");
 
     SYSTEMTIME m_stLoginTime;
-    time_t m_tTimeOnline;
+    SYSTEMTIME m_stLastActiveTime; // Time at last activity
 
     DECLARE_DYNAMIC(CMyClientSocket)
 };

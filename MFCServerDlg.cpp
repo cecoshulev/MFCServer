@@ -167,7 +167,7 @@ BOOL CMFCServerDlg::OnInitDialog()
 	m_ListClients.InsertColumn(0, _T("Client name"), LVCFMT_LEFT, 120);
 	m_ListClients.InsertColumn(1, _T("IP"), LVCFMT_LEFT, 120);
 	m_ListClients.InsertColumn(2, _T("Connected at"), LVCFMT_LEFT, 100);
-	m_ListClients.InsertColumn(3, _T("Time online"), LVCFMT_LEFT, 100);
+	m_ListClients.InsertColumn(3, _T("Time"), LVCFMT_LEFT, 100); // time since last activity
 
 /*
 	int index = m_ListClients.InsertItem(0, _T("Client 1"));
@@ -375,7 +375,7 @@ void CMFCServerDlg::OnTimer(UINT_PTR nIDEvent)
 		pClient = m_serverSocket.GetClientByIP(m_ListClients.GetItemText(i, 1));
 		if (pClient)
 		{
-			diffTime = curTime - pClient->m_stLoginTime;
+			diffTime = curTime - pClient->m_stLastActiveTime;
 			strTmp.Format(_T("%02d:%02d"), diffTime.wMinute, diffTime.wSecond);
 			m_ListClients.SetItemText(i, 3, strTmp);
 			if (diffTime.wMinute >= 10) // Kick client after 10 minutes

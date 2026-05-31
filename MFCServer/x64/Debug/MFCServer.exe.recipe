@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\projects\MFCServer\x64\Debug\MFCServer.exe</FullPath>
+      <FullPath>C:\projects\MFCServer\x64\Debug\MFCServer.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

@@ -98,6 +98,7 @@ void CMyServerSocket::OnAccept(int nErrorCode)
 
             // Add onConnect tile
             GetLocalTime(&pClientSocket->m_stLoginTime);
+            pClientSocket->m_stLastActiveTime = pClientSocket->m_stLoginTime;
             CString strTmp;
 
             GetLocalTime(&pClientSocket->m_stLoginTime);
