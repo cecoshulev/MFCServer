@@ -4,8 +4,10 @@ c:\projects\mfcserver\mfcserver\x64\debug\vc145.idb
 c:\projects\mfcserver\mfcserver\x64\debug\pch.obj
 c:\projects\mfcserver\mfcserver\x64\debug\mfcserverdlg.obj
 c:\projects\mfcserver\mfcserver\x64\debug\mfcserver.obj
+c:\projects\mfcserver\mfcserver\x64\debug\databasemanager.obj
 c:\projects\mfcserver\mfcserver\x64\debug\cmyserversocket.obj
 c:\projects\mfcserver\mfcserver\x64\debug\cmyclientsocket.obj
+c:\projects\mfcserver\mfcserver\x64\debug\sqlite3.obj
 c:\projects\mfcserver\x64\debug\mfcserver.exe
 c:\projects\mfcserver\x64\debug\mfcserver.pdb
 c:\projects\mfcserver\mfcserver\x64\debug\mfcserver.res

@@ -5,6 +5,9 @@
 #pragma once
 #include "CMyServerSocket.h"
 
+#include "DatabaseManager.h"
+#include <memory>
+
 // CMFCServerDlg dialog
 class CMFCServerDlg : public CDialogEx
 {
@@ -46,7 +49,9 @@ private:
 	CMyServerSocket m_serverSocket;
 	CListBox m_listLog;
 	CEdit m_editPort;
+	std::unique_ptr<DatabaseManager> m_db;
 public:
 	afx_msg void OnClickedButtonStart();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	void AddDBRecord(const CString& str1, const CString& str2);
 };

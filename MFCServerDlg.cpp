@@ -18,6 +18,9 @@
 #include <fstream>
 #include <afx.h>
 
+#include "DatabaseManager.h"
+#include <memory>
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -173,6 +176,12 @@ BOOL CMFCServerDlg::OnInitDialog()
 
 	SetTimer(ID_TIMER_CLIENTS, 1000, NULL);
 
+	try {
+		m_db = std::make_unique<DatabaseManager>("log_data.db");
+	}
+	catch (const std::exception& e) {
+		AfxMessageBox(CString(e.what()));
+	}
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -271,15 +280,23 @@ void CMFCServerDlg::AddLogMessage(const CString& strMessage)
 	SYSTEMTIME lt;
 	GetLocalTime(&lt);
 	CString strTimeAndMessage;
-	
+	CString timeStr;
+
 	// Add Time stamp to log message
 	strTimeAndMessage.Format(_T("%02d:%02d:%02d %s"), lt.wHour, lt.wMinute, lt.wSecond, (LPCTSTR)strMessage);
+
+	// Prepare time string for DataBase
+	timeStr.Format(_T("%02d:%02d:%02d "), lt.wHour, lt.wMinute, lt.wSecond);
 
 	int nIndex = m_listLog.AddString(strTimeAndMessage);
 	if (nIndex != LB_ERR)
 	{
 		m_listLog.SetCurSel(nIndex);
 		WriteToFile(strTimeAndMessage);
+
+		// Add record to Data base
+
+		AddDBRecord(timeStr, strMessage);
 	}
 }
 
@@ -390,4 +407,14 @@ void CMFCServerDlg::OnTimer(UINT_PTR nIDEvent)
 	UpdateData(false);
 
 	CDialogEx::OnTimer(nIDEvent);
+}
+
+void CMFCServerDlg::AddDBRecord(const CString& str1, const CString& str2)
+{
+	// TODO: Add your implementation code here.
+	if (m_db) {
+		bool ok = m_db->AddRecord((LPCTSTR)str1, (LPCTSTR)str2);
+		if (!ok)
+			AfxMessageBox(L"Failed to insert record!");
+	}
 }

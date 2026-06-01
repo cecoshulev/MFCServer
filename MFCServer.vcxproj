@@ -203,16 +203,19 @@
   <ItemGroup>
     <ClInclude Include="CMyClientSocket.h" />
     <ClInclude Include="CMyServerSocket.h" />
+    <ClInclude Include="DatabaseManager.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MFCServer.h" />
     <ClInclude Include="MFCServerDlg.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="sqlite3.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CMyClientSocket.cpp" />
     <ClCompile Include="CMyServerSocket.cpp" />
+    <ClCompile Include="DatabaseManager.cpp" />
     <ClCompile Include="MFCServer.cpp" />
     <ClCompile Include="MFCServerDlg.cpp" />
     <ClCompile Include="pch.cpp">
@@ -220,6 +223,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="sqlite3.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4005</DisableSpecificWarnings>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

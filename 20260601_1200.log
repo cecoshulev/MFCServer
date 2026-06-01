@@ -1,0 +1,24 @@
+12:19:42 Server started. Waiting for connections...
+12:20:07 Server started. Waiting for connections...
+12:21:16 Server started. Waiting for connections...
+12:33:28 Server started. Waiting for connections...
+12:33:47 127.0.0.1:65475 connected!
+12:33:56 127.0.0.1:65475 Spider: Aaaaaa
+12:34:06 127.0.0.1:65475 Spider: Ehooo
+12:34:35 127.0.0.1:50564 connected!
+12:34:52 127.0.0.1:50564 Spider2: Ccccccc
+12:34:57 127.0.0.1:50564 Spider2 is disconnected!
+12:34:57 127.0.0.1:65475 Spider is disconnected!
+12:43:00 Server started. Waiting for connections...
+12:44:12 Server started. Waiting for connections...
+12:45:23 127.0.0.1:63097 connected!
+12:45:31 127.0.0.1:63097 Spider1: Hello
+12:45:43 127.0.0.1:63097 Spider1: I'm the first
+12:45:53 127.0.0.1:63098 connected!
+12:46:00 127.0.0.1:63098 Spider2: Ehooooooo
+12:46:16 127.0.0.1:63098 Spider2 is kicked
+12:46:29 127.0.0.1:63101 connected!
+12:46:38 127.0.0.1:63101 Spider3: Hohohohoooo
+12:47:07 127.0.0.1:63101 Spider1: bye!
+12:47:15 127.0.0.1:63101 Spider3 is disconnected!
+12:47:15 127.0.0.1:63097 Spider1 is disconnected!
